@@ -17,7 +17,7 @@
     <property name="path.release" location="${3rdparty.basepath}/" />
     <property name="path.sources" location="${basedir}/" />
 
-    <property name="path.build" location="${basedir}/artifacts" />
+    <property name="path.build" location="${basedir}/build" />
 	
     <!-- Copies bigace and 3rd-party stuff to a local destination -->
     <target name="release" description="Copies 3rd-party stuff to the local repository">
