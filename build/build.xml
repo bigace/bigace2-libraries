@@ -31,6 +31,9 @@
                 <exclude name=".project" />
                 <exclude name=".svn" />
                 <exclude name=".buildpath" />
+                <exclude name=".gitgnore" />
+                <exclude name=".idea" />
+                <exclude name="bigace-v2-3rdparty.zip" />
             </patternset>
         </fileset>
 	
