@@ -1,0 +1,13 @@
+extlib/Snoopy.class.inc
+Zeile 426
+alt:
+			if ( function_exists(gzinflate) ) {
+neu:
+			if ( function_exists("gzinflate") ) {
+			
+rss_fetch.inc
+Zeile 156
+alt:
+            if ( $rss and $rss->etag and $rss->last_modified ) {
+neu:            
+            if ( $rss and isset($rss->etag) and isset($rss->last_modified) ) {

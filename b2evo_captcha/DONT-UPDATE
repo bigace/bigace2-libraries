@@ -1,0 +1,15 @@
+Klasse ist gepatcht, so das ein anderer pfad zurückgegeben wird.
+Die Ursprungs implementation hat einen bug...
+
+
+		function get_b2evo_captcha($public='')
+		{
+			$this->make_captcha();
+			if($public=='') $public = $this->public_key;
+			return $this->filename_prefix.$public.'.jpg';
+		}
+
+http://forum.bigace.de/general/gastebuch-and-capache/
+Ebenfalls 
+@chmod($this->get_filename(), 0644);
+hinzugefügt
