@@ -17,7 +17,7 @@
     <property name="path.release" location="${3rdparty.basepath}/" />
     <property name="path.sources" location="${basedir}/" />
 
-    <property name="path.build" location="${basedir}/../build" />
+    <property name="path.build" location="${basedir}/artifacts" />
 	
     <!-- Copies bigace and 3rd-party stuff to a local destination -->
     <target name="release" description="Copies 3rd-party stuff to the local repository">
@@ -38,7 +38,7 @@
         	<fileset refid="3rdparty.sources" />
         </copy>
     	
-    	<zip destfile="${path.build}/bigace-3rdparty.zip">
+    	<zip destfile="${path.build}/bigace-v2-3rdparty.zip">
             <fileset refid="3rdparty.sources" />
         </zip>
     </target>
