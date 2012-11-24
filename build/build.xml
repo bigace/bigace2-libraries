@@ -1,0 +1,57 @@
+<project name="BIGACE-v2-3rdparty" default="help" basedir="..">
+    
+    <description>
+        Build File for the BIGACE Web CMS - 3rd party libraries.
+
+        See http://www.bigace.de/ for further informations.
+
+        BIGACE - a PHP based Web CMS.
+        Copyright (C) 2009-2010 Keleo (www.keleo.de).
+        Distributed under the terms of the GNU General Public License.
+
+        $Id: build.xml 796 2010-05-27 10:11:40Z bigace $
+    </description>
+
+    <!-- Load build.properties and prepare the environment --> 
+    <property file="build/build.properties" />
+    <property name="path.release" location="${3rdparty.basepath}/" />
+    <property name="path.sources" location="${basedir}/" />
+
+    <property name="path.build" location="${basedir}/../build" />
+	
+    <!-- Copies bigace and 3rd-party stuff to a local destination -->
+    <target name="release" description="Copies 3rd-party stuff to the local repository">
+    	<mkdir dir="${path.release}" />
+        <mkdir dir="${path.build}" />
+
+        <fileset dir="${path.sources}" id="3rdparty.sources">
+            <patternset>
+                <exclude name="build/" />
+                <exclude name=".settings/" />
+                <exclude name=".project" />
+                <exclude name=".svn" />
+                <exclude name=".buildpath" />
+            </patternset>
+        </fileset>
+	
+        <copy todir="${path.release}" includeemptydirs="true">
+        	<fileset refid="3rdparty.sources" />
+        </copy>
+    	
+    	<zip destfile="${path.build}/bigace-3rdparty.zip">
+            <fileset refid="3rdparty.sources" />
+        </zip>
+    </target>
+
+	<target name="help">
+		<echo taskname="INFO" level="info">
+BIGACE - a PHP based Web CMS.
+Copyright (C) 2009-2010 Keleo (www.keleo.de).
+Distributed under the terms of the GNU General Public License.
+			
+This file is used to copy the sources from the repository to a path, 
+where all Bigace build files/tasks search for their external libraries.
+		</echo>
+	</target>
+
+</project>
