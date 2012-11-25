@@ -1,4 +1,4 @@
-bigace2-libraries
-=================
+Bigace v2 - Libraries
+=====================
 
-3rd party libraries used in Bigace v2
+These are 3rd party libraries used in Bigace v2
